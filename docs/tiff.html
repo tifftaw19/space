@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher with Audio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0; /* Optional: added a background color */
+    }
+
+    img {
+        max-width: 500px; /* Set a max-width */
+        max-height: 300px; /* Set a max-height */
+        width: auto; /* Maintain aspect ratio */
+        height: auto; /* Maintain aspect ratio */
+        border: 1px solid #ddd; /* Optional: added a border */
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Optional: added a shadow */
+    }
+
+</style>
+<body>
+    <audio src="bmusic.mp3" autoplay loop></audio>
+    <img id="mainImage" src="green.png" alt="Image">
+    <script>
+        document.body.onkeyup = function(e) {
+        if (e.keyCode == 32) { 
+            var img = document.getElementById('mainImage');
+            if (img.src.endsWith('green.png')) {
+                img.src = 'blue.png';
+            } else {
+                img.src = 'green.png';
+            }
+        }
+    }
+    </script>
+</body>
+</html>
