@@ -13,33 +13,33 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        background-color: #f0f0f0; /* Optional: added a background color */
+        background-color: #f0f0f0;
     }
 
     img {
-        max-width: 500px; /* Set a max-width */
-        max-height: 300px; /* Set a max-height */
-        width: auto; /* Maintain aspect ratio */
-        height: auto; /* Maintain aspect ratio */
-        border: 1px solid #ddd; /* Optional: added a border */
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Optional: added a shadow */
+        max-width: 500px; 
+        max-height: 300px; 
+        width: auto; 
+        height: auto;
+        border: 1px solid #ddd; 
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
     }
 
 </style>
 <body>
     <audio src="bmusic.mp3" autoplay loop></audio>
-    <img id="mainImage" src="green.png" alt="Image">
+    <img id="mainImage" src="smile3.jpeg" alt="Image">
     <script>
+        var images = ['smile1.jpeg', 'smile2.jpeg', 'smile3.jpeg', 'smile4.jpeg']; 
+        var currentImage = 0;
+
         document.body.onkeyup = function(e) {
-        if (e.keyCode == 32) { 
-            var img = document.getElementById('mainImage');
-            if (img.src.endsWith('green.png')) {
-                img.src = 'blue.png';
-            } else {
-                img.src = 'green.png';
+            if (e.keyCode == 32) { 
+                currentImage = (currentImage + 1) % images.length;
+                document.getElementById('mainImage').src = images[currentImage];
             }
         }
-    }
+
     </script>
 </body>
 </html>
