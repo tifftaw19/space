@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher with Audio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    img {
+        max-width: 1000px; 
+        max-height: 500px; 
+        width: auto; 
+        height: auto;
+        border: 1px solid #ddd; 
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+    }
+    .img-with-text {
+    text-align: justify;
+    width: [width of img];
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+
+</style>
+<body>
+    <audio src="laugh.m4a" autoplay loop></audio>
+    <div class="img-with-text">
+        <img id="mainImage" src="1.jpeg" alt="Image">
+    <script>
+        var images = ['1.jpeg','1.gif','2.webp','2.gif','3.jpg','4.jpg','4.gif','5.avif','6.webp','7.jpg','7.gif','8.jpeg','9.jpeg','9.gif','10.jpeg','11.jpg','12.jpg','12.gif','13.jpg','13.webp','14.jpeg','15.jpeg','15.gif','16.png','17.avif','17.webp','18.png','19.png','19.gif','20.png','20.gif','21.png','21.gif','22.png','22.gif','23.png','23.gif','24.jpg','24.gif','25.png','25.gif','26.jpeg','26.gif','27.jpeg','27.gif','28.jpg','29.jpg','10.gif','30.jpeg','31.jpeg','32.jpeg','16.gif','33.webp','34.jpeg','14.gif','35.jpeg','5.gif','36.jpeg','37.jpeg','6.gif','38.jpeg','39.jpg','40.jpg','18.gif','41.webp','42.webp','11.gif','43.jpg','44.jpeg','8.gif','45.png','46.avif','47.jpg','3.gif','48.jpg','49.jpg','28.gif','50.jpg','51,jpg','29.gif','52.jpg','30.gif','53.jpg']; 
+        var currentImage = 0;
+
+        document.body.onkeyup = function(e) {
+            if (e.keyCode == 32) { 
+                currentImage = (currentImage + 1) % images.length;
+                document.getElementById('mainImage').src = images[currentImage];
+            }
+        }
+
+    </script>
+    <p>click space</p>
+    </div>
+</body>
+</html>
